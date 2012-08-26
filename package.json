@@ -1,0 +1,15 @@
+{
+  "name": "seoserver",
+  "version": "1.0.1",
+  "main": "lib/seoserver",
+  "bin": {
+    "seoserver": "./bin/seoserver.js"
+  },
+  "dependencies": {
+    "commander": "~1.0.2",
+    "forever": "~0.10.0",
+    "forever-monitor": "~1.1.0",
+    "express": "~3.0.0rc3",
+    "phantom": "~0.3.5"
+  }
+}
