@@ -23,6 +23,8 @@ if (program.config) {
 
 if(program.stop) {
 	forever.stop('seoserver');
+	console.log('SeoServer has been stopped');
 } else {
-	forever.startDaemon('../lib/seoserver.js', {uid: 'seoserver', silent:false, options: [program.config]});
+	forever.startDaemon('../lib/seoserver.js', {uid: 'seoserver', options: [program.config]});
+	console.log('SeoServer successfully started, `seoserver -s` to stop it');
 }
