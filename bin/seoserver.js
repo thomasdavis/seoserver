@@ -4,7 +4,7 @@
 
 var program = require('commander');
 var fs = require('fs');
-var forever = require('forever');
+var forever = require('forever-monitor');
 
 // require our seoserver npm package
 
@@ -25,6 +25,9 @@ if(program.stop) {
 	forever.stop('seoserver');
 	console.log('SeoServer has been stopped');
 } else {
-	forever.startDaemon(__dirname + '/../lib/seoserver.js', {uid: 'seoserver', options: [program.config]});
+  var child = new (forever.Monitor)(__dirname + '/../lib/test.js', {
+  uid: 'seoserver', options: [program.config]
+  });
+child.start();
 	console.log(__dirname, 'SeoServer successfully started, `seoserver -s` to stop it');
 }
