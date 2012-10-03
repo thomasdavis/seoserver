@@ -1,15 +1,13 @@
 {
   "name": "seoserver",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "lib/seoserver",
   "bin": {
     "seoserver": "./bin/seoserver.js"
   },
   "dependencies": {
     "commander": "~1.0.2",
-    "forever": "~0.10.0",
     "forever-monitor": "~1.1.0",
-    "express": "~3.0.0rc4",
-    "phantom": "git://github.com/amir20/phantomjs-node.git#phantom-1.7-fix"
+    "express": "~3.0.0rc4"
   }
 }
