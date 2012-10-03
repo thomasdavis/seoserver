@@ -10,24 +10,19 @@ var forever = require('forever-monitor');
 
 program
   .version('0.0.1')
-  .option('-c, --config <location>', 'Specifiy a config location, leave blank for defaults')
-  .option('-s, --stop', 'Stop the currently running SeoServer')
-  .parse(process.argv);
+  .option('-p, --port <location>', 'Specifiy a port to run on')
 
-if (program.config) {
-	var config = JSON.parse(fs.readFileSync(program.config, 'utf8'));
-	if(typeof config.forever !== 'undefined') {
-		forever.load(config.forever);
-	}
-};
 
-if(program.stop) {
-	forever.stop('seoserver');
-	console.log('SeoServer has been stopped');
-} else {
-  var child = new (forever.Monitor)(__dirname + '/../lib/test.js', {
-  uid: 'seoserver', options: [program.config]
+program
+  .command('start')
+  .description('Starts up an SeoServer on default port 3000')
+  .action(function () {
+    var child = new (forever.Monitor)(__dirname + '/../lib/seoserver.js', {
+      options: [program.port]
+    });
+    child.start();
+    console.log(__dirname, 'SeoServer successfully started');
   });
-child.start();
-	console.log(__dirname, 'SeoServer successfully started, `seoserver -s` to stop it');
-}
+
+program.parse(process.argv);
+
