@@ -21,11 +21,4 @@ program
         console.log(__dirname, 'SeoServer successfully started');
     });
 
-program
-    .command('stop')
-    .description('Stops the SeoServer')
-    .action(function() {
-        console.log(__dirname, 'SeoServer stop stub. What should this do?');
-    });
-
 program.parse(process.argv);
