@@ -1,7 +1,7 @@
 {
     "url": "http://client.apiengine.io/",
     "verbose": false,
-    "checkCompleteInterval": 1000,
-    "checkCompleteTimeDiff": 3000,
+    "checkCompleteInterval": 1,
+    "checkCompleteTimeDiff": 300,
     "checkCompleteTimeout": 10000
 }
