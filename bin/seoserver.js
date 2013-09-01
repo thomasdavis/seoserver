@@ -2,7 +2,8 @@
 
 var program = require('commander'),
     fs = require('fs'),
-    forever = require('forever-monitor');
+    forever = require('forever-monitor'),
+    config = require('./config');
 
 // require our seoserver npm package
 
@@ -19,6 +20,7 @@ program
         });
         child.start();
         console.log(__dirname, 'SeoServer successfully started');
+        console.log('With config: ', JSON.stringify(config, null, 4));
     });
 
 program.parse(process.argv);
