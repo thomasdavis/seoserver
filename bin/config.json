@@ -1,8 +1,6 @@
 {
     "verbose": true,
     "debug": false,
-    "minResponses": 5,
-    "minContentLength": 4000,
     "checkCompleteInterval": 10,
     "checkCompleteTimeDiff": 300,
     "checkCompleteTimeout": 10000
