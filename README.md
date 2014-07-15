@@ -1,12 +1,9 @@
   <h3>Forked version</h3>
   <p>This is a modified version of seoserver by Thomas Davis. I made this change as the original version doesn't seem to work correctly for me.</p>
   <p>In order to have this working you need an Apache server with the following config:</p>
-  <code>
-	RewriteEngine on
-	RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
-	RewriteRule (.*) http://localhost:3000%{REQUEST_URI}  [P]
-  </code>
-
+  <code>RewriteEngine on</code>
+	<code>RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$</code>
+	<code>RewriteRule (.*) http://localhost:3000%{REQUEST_URI}  [P]</code>
 
   <h3>Welcome!</h3>
   <p>Seo Server is a command line tool that runs a server that allows GoogleBot(and any other crawlers) to crawl your heavily Javascript built websites. The tool works with very little changes to your server or client side code.</p>
