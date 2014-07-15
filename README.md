@@ -1,8 +1,8 @@
   <h3>Forked version</h3>
   <p>This is a modified version of seoserver by Thomas Davis. I made this change as the original version doesn't seem to work correctly for me.</p>
   <p>In order to have this working you need an Apache server with the following config:</p>
-  <code>RewriteEngine on</code>
-	<code>RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$</code>
+  <code>RewriteEngine on</code><br/>
+	<code>RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$</code><br/>
 	<code>RewriteRule (.*) http://localhost:3000%{REQUEST_URI}  [P]</code>
 
   <h3>Welcome!</h3>
